@@ -1,0 +1,38 @@
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'com.github.johnrengelman.shadow'
+
+sourceCompatibility = 1.8
+mainClassName = 'com.dovydasvenckus.quota.QuotaApplication'
+
+ext {
+    slf4jVersion = '1.7.25'
+    jettyVersion = '9.4.6.v20170531'
+    jerseyVersion = '2.25.1'
+}
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.1'
+    }
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile "org.slf4j:slf4j-api:${slf4jVersion}"
+    compile "org.slf4j:slf4j-simple:${slf4jVersion}"
+
+    compile "org.eclipse.jetty:jetty-server:${jettyVersion}"
+    compile "org.eclipse.jetty:jetty-servlet:${jettyVersion}"
+
+    compile "org.glassfish.jersey.core:jersey-server:${jerseyVersion}"
+    compile "org.glassfish.jersey.containers:jersey-container-servlet-core:${jerseyVersion}"
+    compile "org.glassfish.jersey.containers:jersey-container-jetty-http:${jerseyVersion}"
+}
