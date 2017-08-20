@@ -3,7 +3,7 @@ apply plugin: 'application'
 apply plugin: 'com.github.johnrengelman.shadow'
 
 sourceCompatibility = 1.8
-mainClassName = 'com.dovydasvenckus.quota.QuotaApplication'
+mainClassName = 'com.dovydasvenckus.jersey.JerseyApplication'
 
 ext {
     slf4jVersion = '1.7.25'
