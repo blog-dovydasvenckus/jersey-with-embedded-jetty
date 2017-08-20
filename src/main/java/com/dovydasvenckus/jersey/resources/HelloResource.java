@@ -13,6 +13,6 @@ public class HelloResource {
     @Path("/{param}")
     @Produces(MediaType.TEXT_PLAIN)
     public String getMessage(@PathParam("param") String msg) {
-        return "Hello " + msg;
+        return "Hello " + msg + "\n";
     }
 }
