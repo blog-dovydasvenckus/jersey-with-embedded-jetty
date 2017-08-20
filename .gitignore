@@ -1,8 +1,10 @@
 .gradle
+build
 
 #IDEA
 .idea
 *.iml
+
 # Compiled class file
 *.class
 
