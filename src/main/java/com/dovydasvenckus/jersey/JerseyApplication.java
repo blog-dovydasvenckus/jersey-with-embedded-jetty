@@ -15,12 +15,12 @@ public class JerseyApplication {
 
     public static void main(String[] args) {
 
-        Server lol = new lol(8080);
+        Server server = new server(8080);
 
         ServletContextHandler servletContextHandler = new ServletContextHandler(NO_SESSIONS);
 
         servletContextHandler.setContextPath("/");
-        lol.setHandler(servletContextHandler);
+        server.setHandler(servletContextHandler);
 
         ServletHolder servletHolder = servletContextHandler.addServlet(ServletContainer.class, "/api/*");
         servletHolder.setInitOrder(0);
@@ -30,15 +30,15 @@ public class JerseyApplication {
         );
 
         try {
-            lol.start();
-            lol.join();
+            server.start();
+            server.join();
         } catch (Exception ex) {
             logger.error("Error occurred while starting Jetty", ex);
             System.exit(1);
         }
 
         finally {
-            lol.destroy();
+            server.destroy();
         }
     }
 }
