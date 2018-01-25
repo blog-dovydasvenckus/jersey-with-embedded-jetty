@@ -15,7 +15,7 @@ public class JerseyApplication {
 
     public static void main(String[] args) {
 
-        Server server = new Server(8080);
+        Server server = new server(8080);
 
         ServletContextHandler servletContextHandler = new ServletContextHandler(NO_SESSIONS);
 
