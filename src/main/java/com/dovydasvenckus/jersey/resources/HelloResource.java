@@ -11,13 +11,13 @@ public class HelloResource {
     @GET
     @Path("/{param}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Greeting parseGreeting(@PathParam("param") String name) {
+    public Greeting hello(@PathParam("param") String name) {
         return new Greeting(name);
     }
 
     @POST
     @Produces(MediaType.TEXT_PLAIN)
-    public String unparseGreeting(Greeting greeting) {
+    public String helloUsingJson(Greeting greeting) {
         return greeting.getMessage() + "\n";
     }
 }
