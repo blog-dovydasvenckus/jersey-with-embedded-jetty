@@ -35,4 +35,5 @@ dependencies {
     compile "org.glassfish.jersey.core:jersey-server:${jerseyVersion}"
     compile "org.glassfish.jersey.containers:jersey-container-servlet-core:${jerseyVersion}"
     compile "org.glassfish.jersey.containers:jersey-container-jetty-http:${jerseyVersion}"
+    compile "org.glassfish.jersey.media:jersey-media-json-jackson:${jerseyVersion}"
 }

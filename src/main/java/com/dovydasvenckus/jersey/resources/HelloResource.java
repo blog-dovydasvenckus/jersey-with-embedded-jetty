@@ -1,9 +1,8 @@
 package com.dovydasvenckus.jersey.resources;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import com.dovydasvenckus.jersey.greeting.Greeting;
+
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
 @Path("/hello")
@@ -11,8 +10,14 @@ public class HelloResource {
 
     @GET
     @Path("/{param}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Greeting parseGreeting(@PathParam("param") String name) {
+        return new Greeting(name);
+    }
+
+    @POST
     @Produces(MediaType.TEXT_PLAIN)
-    public String getMessage(@PathParam("param") String msg) {
-        return "Hello " + msg + "\n";
+    public String unparseGreeting(Greeting greeting) {
+        return greeting.getMessage() + "\n";
     }
 }
